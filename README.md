@@ -14,6 +14,7 @@ void alu_compute(uint16_t x,
                  uint16_t y,
                  bool zx,
                  bool nx,
+                 bool zy,
                  bool ny,
                  bool f,
                  bool no,
@@ -24,25 +25,27 @@ void alu_compute(uint16_t x,
 ```
 
 ### Specification
-See [1] for more information:
+See [1] for more information.
+```
+Notes:
+	Overflow is not detected or handled.
+	Overflow behaves as expected for a 16 bit unsigned integer.
 
-* Notes:
-...Overflow is not detected or handled.
-...Overflow behaves as expected for a 16 bit unsigned integer.
+Inputs
+	x	:	16 bit unsigned int
+	y	:	16 bit unsigned int
+	zx	:	zero x input flag
+	nx	:	negate (bitwise) x input flag
+	zy	:	zero y input flag
+	ny	:	negate (bitwise) y input flag
+	f	:	set for addition, else bitwise AND
+	no	:	negate (bitwise) output flag
 
-###### Inputs
-...x	:	16 bit unsigned int
-...y	:	16 bit unsigned int
-...zx	:	zero x input flag
-...nx	:	negate (bitwise) x input flag
-...zy	:	zero y input flag
-...ny	:	negate (bitwise) y input flag
-...f	:	set for addition, else bitwise AND
-...no	:	negate (bitwise) output flag
-###### Outputs
-...out	:	16 bit unsigned int
-...zr	:	zero flag, set iff out == 0
-...ng	:	negative flag, set iff out < 0
+Outputs
+	out	:	16 bit unsigned int
+	zr	:	zero flag, set iff out == 0
+	ng	:	negative flag, set iff out < 0
+```
 
 ### Technologies
 * C
