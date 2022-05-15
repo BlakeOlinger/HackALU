@@ -55,13 +55,19 @@ Outputs
 
 ### Setup
 * Build lib
-...make build-lib
+```bash
+:~/$ make build-lib
+```
 
 * Build Tests
-...make build-tests
+```bash
+:~/$ make build-tests
+```
 
 * Run Tests
-...make run-tests
+```bash
+:~/$ make run-tests
+```
 
 ### Sources
 1. Nisan, N., & Schocken, S. (2005). *The Elements of Computing Systems:
