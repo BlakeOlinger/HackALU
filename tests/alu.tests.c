@@ -227,6 +227,18 @@ int main(void)
 	expected_ng = 0;
 	test_alu_compute(0xFEFF, 0x7, zx, nx, zy, ny, f, no, expected_out, expected_zr, expected_ng);
 
+	/** x|y
+	 * for x: 0x04A6, for y: 0x4443
+	 * return x&y
+	 * zr: unset
+	 * ng: unset
+	 */
+	zx = 0; nx = 1; zy = 0; ny = 1; f = 0; no = 1;
+	expected_out = 0x44E7;
+	expected_zr = 0;
+	expected_ng = 0;
+	test_alu_compute(0x04A6, 0x4443, zx, nx, zy, ny, f, no, expected_out, expected_zr, expected_ng);
+
 	exit(0);
 }
 
