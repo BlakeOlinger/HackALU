@@ -1,5 +1,5 @@
 # Hack Computing Platform ALU
-An ALU implementing the specification of the Hack Computing Platform.[1]
+An ALU implementing the specification of the Hack Computing Platform. [1]
 
 ## Table of contents
 * [API](#api)
@@ -31,7 +31,7 @@ Notes:
 	Overflow is not detected or handled.
 	Overflow behaves as expected for a 16 bit unsigned integer.
 
-Inputs
+Inputs:
 	x	:	16 bit unsigned int
 	y	:	16 bit unsigned int
 	zx	:	zero x input flag
@@ -41,7 +41,7 @@ Inputs
 	f	:	set for addition, else bitwise AND
 	no	:	negate (bitwise) output flag
 
-Outputs
+Outputs:
 	out	:	16 bit unsigned int
 	zr	:	zero flag, set iff out == 0
 	ng	:	negative flag, set iff out < 0
@@ -54,7 +54,7 @@ Outputs
 * Bash
 
 ### Setup
-* Build lib
+* Build Library
 ```bash
 :~/$ make build-lib
 ```
