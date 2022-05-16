@@ -5,7 +5,7 @@ build-lib:
 	clear; test -d lib; if [ $$? = 1 ]; then mkdir lib; fi; clang -c -x c -O -std=c17 -fpic -Iinclude/ -Wall -Werror -o lib/libAlu.so src/alu.c; echo "Generated lib/libAlu.so"
 
 build-profiler:
-	clear; clang -x c -std=c17 -O -Wall -Werror -Iinclude/ -o bin/alu.profiler profiler/alu.profiler.c -Wl,lib/libAlu.so
+	clear; clang -x c -std=c17 -O -Wall -Werror -Iinclude/ -o bin/alu.profiler profiler/alu.profiler.c src/alu.c
 
 build-tests:
 	clear; test -d lib; if [ $$? = 1 ]; then mkdir lib; fi; clang -c -x c -O -std=c17 -fpic -Iinclude/ -Wall -Werror -o lib/libAlu.so src/alu.c; clang -x c -O -std=c17 -Iinclude/ -Wall -Werror -o bin/unit.tests src/alu.c tests/unit.tests.c
