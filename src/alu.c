@@ -45,7 +45,7 @@ uint16_t if_zero(uint16_t x, bool z)
 
 bool is_ng(uint16_t x)
 {
-	return (x & 0x8000) == 0x8000;
+	return x & 0x8000;
 }
 
 bool is_zr(uint16_t x)

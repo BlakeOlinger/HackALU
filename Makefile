@@ -8,7 +8,7 @@ build-profiler:
 	clear; clang -x c -std=c17 -O -Wall -Werror -Iinclude/ -o bin/alu.profiler profiler/alu.profiler.c src/alu.c
 
 build-tests:
-	clear; test -d lib; if [ $$? = 1 ]; then mkdir lib; fi; clang -c -x c -O -std=c17 -fpic -Iinclude/ -Wall -Werror -o lib/libAlu.so src/alu.c; clang -x c -O -std=c17 -Iinclude/ -Wall -Werror -o bin/unit.tests src/alu.c tests/unit.tests.c
+	clear; clang -x c -O -std=c17 -Iinclude/ -Wall -Werror -o bin/unit.tests src/alu.c tests/unit.tests.c; clang -x c -O -std=c17 -Iinclude/ -Wall -Werror -o bin/alu.tests src/alu.c tests/alu.tests.c
 
 build-unit-tests:
 	clear; clang -x c -O -std=c17 -Iinclude/ -Wall -Werror -o bin/unit.tests src/alu.c tests/unit.tests.c
